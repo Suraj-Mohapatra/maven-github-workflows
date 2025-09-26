@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.uglyeagle</groupId>
@@ -9,18 +9,18 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>maven-github-workflows</name>
-    
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <mainClass>com.uglyeagle.Main</mainClass>
     </properties>
-    
+
     <dependencies>
 
     </dependencies>
-    
+
     <build>
         <plugins>
 
@@ -35,7 +35,7 @@
                     <fork>true</fork>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -48,7 +48,7 @@
                     </archive>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -61,7 +61,8 @@
                         </goals>
                         <configuration>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <transformer
+                                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>${mainClass}</mainClass>
                                 </transformer>
                             </transformers>
@@ -69,9 +70,22 @@
                     </execution>
                 </executions>
             </plugin>
-        
+
         </plugins>
-        <finalName>maven-github-workflows</finalName>
+        <!-- <finalName>maven-github-workflows</finalName> -->
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/Suraj-Mohapatra/maven-github-workflows</url>
+        </repository>
+        <snapshotRepository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/Suraj-Mohapatra/maven-github-workflows</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
