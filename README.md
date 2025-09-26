@@ -1,2 +1,2 @@
 # maven-github-workflows
-A dummy Maven project acts as a template for creating other GitHub repositories.
+a Maven project demonstrating automated build and publish to GitHub Packages using GitHub Actions workflows.
